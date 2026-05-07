@@ -1,0 +1,4 @@
+{
+  "playwright.config": "playwright.config.ts",
+  "testing.automaticallyOpenPeekView": "never"
+}

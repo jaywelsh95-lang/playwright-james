@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Playwright: Run tests",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "test"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Playwright: UI mode",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "test:ui"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Playwright: Install Chromium",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "install:chromium"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Playwright: Show report",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "report"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Playwright: Codegen",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "codegen"],
+      "problemMatcher": []
+    }
+  ]
+}
