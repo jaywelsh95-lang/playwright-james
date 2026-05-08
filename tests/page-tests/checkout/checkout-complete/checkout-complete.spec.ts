@@ -1,6 +1,6 @@
 import { expect, test } from '../../../../fixtures/pages.fixture';
 import { credentials } from '../../../../test-data/credentials';
-import { userData } from '../../../../test-data/userData';
+import { userData } from '../../../../test-data/user-data';
 
 test.describe('Checkout Complete', () => {
   test.beforeEach(async ({ loginPage, plpPage, headerComponent, basketPage, checkoutStepOnePage, checkoutStepTwoPage, checkoutCompletePage }) => {

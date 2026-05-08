@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 import { headerSelectors } from '../selectors/header.selectors';
-import { plpSelectors } from '../selectors/plp.selector';
+import { plpSelectors } from '../selectors/plp.selectors';
 import { BasePage } from './base-page';
 
 export class PLPPage extends BasePage {

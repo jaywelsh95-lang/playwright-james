@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { HeaderComponent } from '../../components/header.component';
-import { checkoutStepTwoSelectors } from '../../selectors/checkout/checkoutStepTwo.selectors';
+import { checkoutStepTwoSelectors } from '../../selectors/checkout/checkout-step-two.selectors';
 import { BasePage } from '../base-page';
 
 export class CheckoutStepTwoPage extends BasePage {

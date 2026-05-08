@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/pages.fixture';
 import { credentials } from '../../../test-data/credentials';
-import { userData } from '../../../test-data/userData';
+import { userData } from '../../../test-data/user-data';
 
 test.describe('Footer', () => {
   test.beforeEach(async ({ loginPage, plpPage }) => {

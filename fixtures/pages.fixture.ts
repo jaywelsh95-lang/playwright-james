@@ -2,9 +2,9 @@ import { test as base } from '@playwright/test';
 import { FooterComponent } from '../components/footer.component';
 import { HeaderComponent } from '../components/header.component';
 import { BasketPage } from '../pages/basket-page';
-import { CheckoutCompletePage } from '../pages/checkout/checkoutCompletePage';
-import { CheckoutStepOnePage } from '../pages/checkout/checkoutStepOnePage';
-import { CheckoutStepTwoPage } from '../pages/checkout/checkoutStepTwoPage';
+import { CheckoutCompletePage } from '../pages/checkout/checkout-complete-page';
+import { CheckoutStepOnePage } from '../pages/checkout/checkout-step-one-page';
+import { CheckoutStepTwoPage } from '../pages/checkout/checkout-step-two-page';
 import { HomePage } from '../pages/home-page';
 import { InstallationPage } from '../pages/installation-page';
 import { LoginPage } from '../pages/login-page';
@@ -41,11 +41,11 @@ export const test = base.extend<PageFixtures>({
   plpPage: async ({ page }, use) => {
     await use(new PLPPage(page));
   },
-pdpPage: async ({ page }, use) => {
+
+  pdpPage: async ({ page }, use) => {
     await use(new PDPPage(page));
   },
 
-  
   basketPage: async ({ page }, use) => {
     await use(new BasketPage(page));
   },

@@ -1,6 +1,6 @@
 import { expect, test } from '../../../../fixtures/pages.fixture';
 import { credentials } from '../../../../test-data/credentials';
-import { userData } from '../../../../test-data/userData';
+import { userData } from '../../../../test-data/user-data';
 
 test.describe('Checkout Step One', () => {
   test.beforeEach(async ({ loginPage, plpPage, headerComponent, basketPage, checkoutStepOnePage }) => {
@@ -70,6 +70,16 @@ test.describe('Checkout Step One', () => {
 
     await test.step('Click continue and verify next page', async () => {
       await checkoutStepOnePage.clickContinueAndExpectNextStep();
+    });
+  });
+
+  test('Continue with empty fields shows an error message', async ({ checkoutStepOnePage }) => {
+    await test.step('Click continue without entering details', async () => {
+      await checkoutStepOnePage.clickContinueAndExpectError();
+    });
+
+    await test.step('Verify error message is displayed', async () => {
+      await checkoutStepOnePage.expectErrorMessageVisible();
     });
   });
 });
