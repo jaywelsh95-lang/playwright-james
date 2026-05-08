@@ -1,4 +1,5 @@
 import { test as base } from '@playwright/test';
+import { FooterComponent } from '../components/footer.component';
 import { HeaderComponent } from '../components/header.component';
 import { BasketPage } from '../pages/basket-page';
 import { CheckoutCompletePage } from '../pages/checkout/checkoutCompletePage';
@@ -21,6 +22,7 @@ type PageFixtures = {
   checkoutStepTwoPage: CheckoutStepTwoPage;
   checkoutCompletePage: CheckoutCompletePage;
   headerComponent: HeaderComponent;
+  footerComponent: FooterComponent;
 };
 
 export const test = base.extend<PageFixtures>({
@@ -62,6 +64,10 @@ pdpPage: async ({ page }, use) => {
 
   headerComponent: async ({ page }, use) => {
     await use(new HeaderComponent(page));
+  },
+
+  footerComponent: async ({ page }, use) => {
+    await use(new FooterComponent(page));
   },
 });
 

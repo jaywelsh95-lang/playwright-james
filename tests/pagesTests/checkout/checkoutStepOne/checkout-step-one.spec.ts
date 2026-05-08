@@ -31,12 +31,6 @@ test.describe('Checkout Step One', () => {
     });
   });
 
-  test('Header is present on checkout step one page', async ({ checkoutStepOnePage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await checkoutStepOnePage.expectHeaderVisible();
-    });
-  });
-
   test('Checkout step one form fields are present', async ({ checkoutStepOnePage }) => {
     await test.step('Verify input fields are visible', async () => {
       await checkoutStepOnePage.expectFormFieldsVisible();

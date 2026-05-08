@@ -44,12 +44,6 @@ test.describe('Checkout Complete', () => {
     });
   });
 
-  test('Header is present on checkout complete page', async ({ checkoutCompletePage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await checkoutCompletePage.expectHeaderVisible();
-    });
-  });
-
   test('Success message is visible on checkout complete page', async ({ checkoutCompletePage }) => {
     await test.step('Verify success message is visible', async () => {
       await checkoutCompletePage.expectSuccessMessageVisible();

@@ -40,12 +40,6 @@ test.describe('Checkout Step Two', () => {
     });
   });
 
-  test('Header is present on checkout step two page', async ({ checkoutStepTwoPage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await checkoutStepTwoPage.expectHeaderVisible();
-    });
-  });
-
   test('Product details are visible on checkout step two', async ({ checkoutStepTwoPage }) => {
     await test.step('Verify product details are visible', async () => {
       await checkoutStepTwoPage.expectProductDetailsVisible();
