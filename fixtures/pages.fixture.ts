@@ -7,6 +7,7 @@ import { CheckoutStepTwoPage } from '../pages/checkout/checkoutStepTwoPage';
 import { HomePage } from '../pages/home-page';
 import { InstallationPage } from '../pages/installation-page';
 import { LoginPage } from '../pages/login-page';
+import { PDPPage } from '../pages/pdp-page';
 import { PLPPage } from '../pages/plp-page';
 
 type PageFixtures = {
@@ -14,6 +15,7 @@ type PageFixtures = {
   installationPage: InstallationPage;
   loginPage: LoginPage;
   plpPage: PLPPage;
+  pdpPage: PDPPage;
   basketPage: BasketPage;
   checkoutStepOnePage: CheckoutStepOnePage;
   checkoutStepTwoPage: CheckoutStepTwoPage;
@@ -37,7 +39,11 @@ export const test = base.extend<PageFixtures>({
   plpPage: async ({ page }, use) => {
     await use(new PLPPage(page));
   },
+pdpPage: async ({ page }, use) => {
+    await use(new PDPPage(page));
+  },
 
+  
   basketPage: async ({ page }, use) => {
     await use(new BasketPage(page));
   },
