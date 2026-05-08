@@ -28,8 +28,7 @@ test.describe('E2E Test', () => {
     });
 
     await test.step('Navigate to product details page', async () => {
-      const product = plpPage.productByName('Sauce Labs Backpack');
-      await product.click();
+      await plpPage.openProductDetails('Sauce Labs Backpack');
       await pdpPage.expectLoaded();
     });
 
@@ -56,19 +55,6 @@ test.describe('E2E Test', () => {
     });
 
     await test.step('Verify basket has 2 products', async () => {
-      await plpPage.expectBasketCounterValue(2);
-    });
-
-    await test.step('Verify PLP is loaded with content', async () => {
-      await plpPage.expectLoaded();
-    });
-
-    await test.step('Add multiple products to basket', async () => {
-      await plpPage.addProductToBasket('Sauce Labs Backpack');
-      await plpPage.addProductToBasket('Sauce Labs Bike Light');
-    });
-
-    await test.step('Verify basket counter updates', async () => {
       await plpPage.expectBasketCounterValue(2);
     });
 

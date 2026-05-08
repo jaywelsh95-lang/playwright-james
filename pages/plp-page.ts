@@ -31,6 +31,13 @@ export class PLPPage extends BasePage {
     await product.getByRole('button', { name: /add to cart/i }).click();
   }
 
+  async openProductDetails(productName: string) {
+    const product = this.productByName(productName);
+
+    await expect(product).toBeVisible();
+    await product.locator(plpSelectors.inventoryItemName).click();
+  }
+
   async addProductToBasketAndExpectCounter(productName: string, expectedBasketCount: number) {
     await this.addProductToBasket(productName);
     await this.expectBasketCounterValue(expectedBasketCount);

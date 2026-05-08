@@ -1,9 +1,9 @@
 export const pdpSelectors = {
-  productContainer: '.inventory_details_container',
-  productName: '[data-test="product-title"], .inventory_details_name_large, h1',
-  productPrice: '[data-test="price"], .inventory_details_price, [class*="price"]',
-  productDescription: '[data-test="product-description"], .inventory_details_desc_large, [class*="desc"]',
-  productImage: '.inventory_details_img img, [data-test="product-image"]',
-  addToCartButton: '#add-to-cart, [data-test*="add-to-cart"], button:has-text("Add to cart")',
-  backButton: '#back-to-products, button:has-text("Back to products")',
+  productContainer: '.inventory_details',
+  productName: '.inventory_details_name',
+  productPrice: '.inventory_details_price',
+  productDescription: '.inventory_details_desc',
+  productImage: '.inventory_details_img',
+  addToCartButton: 'button:has-text("Add to cart")',
+  backButton: '#back-to-products',
 } as const;

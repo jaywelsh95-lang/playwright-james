@@ -3,7 +3,7 @@ import { credentials } from '../../../test-data/credentials';
 import { urls } from '../../../test-data/urls';
 
 test.describe('Product Details Page (PDP)', () => {
-  test.beforeEach(async ({ loginPage, pdpPage }) => {
+  test.beforeEach(async ({ loginPage, plpPage, pdpPage }) => {
     await test.step('Navigate to login page', async () => {
       await loginPage.goto();
     });
@@ -13,8 +13,8 @@ test.describe('Product Details Page (PDP)', () => {
       await loginPage.expectLoginSuccessful();
     });
 
-    await test.step('Navigate to PDP', async () => {
-      await pdpPage.goto(urls.home2 + 'inventory-item.html?id=sauce-labs-backpack');
+    await test.step('Navigate to PDP via PLP', async () => {
+      await pdpPage.openFromPLP(plpPage, 'Sauce Labs Backpack');
     });
   });
 
@@ -26,9 +26,7 @@ test.describe('Product Details Page (PDP)', () => {
 
   test('Product content is visible on PDP', async ({ pdpPage }) => {
     await test.step('Verify product details are visible', async () => {
-      await expect(pdpPage.productName).toBeVisible();
-      await expect(pdpPage.productPrice).toBeVisible();
-      await expect(pdpPage.productDescription).toBeVisible();
+      await pdpPage.expectProductContentVisible();
     });
   });
 
@@ -44,7 +42,7 @@ test.describe('Product Details Page (PDP)', () => {
     });
 
     await test.step('Verify basket counter updates', async () => {
-      await expect(pdpPage.page.locator('[data-test="shopping-cart-badge"]')).toHaveText('1');
+      await pdpPage.headerComponent.expectShoppingCartBadgeCount('1');
     });
   });
 });

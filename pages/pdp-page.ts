@@ -2,6 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import { HeaderComponent } from '../components/header.component';
 import { pdpSelectors } from '../selectors/pdp.selectors';
 import { BasePage } from './base-page';
+import { PLPPage } from './plp-page';
 
 export class PDPPage extends BasePage {
   readonly headerComponent: HeaderComponent;
@@ -41,6 +42,11 @@ export class PDPPage extends BasePage {
 
   async addProductToCart() {
     await this.addToCartButton.click();
+  }
+
+  async openFromPLP(plpPage: PLPPage, productName: string) {
+    await plpPage.openProductDetails(productName);
+    await this.expectLoaded();
   }
 
   async clickProductName(productName: string) {

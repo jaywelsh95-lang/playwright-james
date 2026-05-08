@@ -9,6 +9,7 @@ export class HeaderComponent {
   readonly menuButton: Locator;
   readonly shoppingCartContainer: Locator;
   readonly shoppingCartLink: Locator;
+  readonly shoppingCartBadge: Locator;
   readonly cartList: Locator;
   readonly cartItems: Locator;
   readonly getStartedLink: Locator;
@@ -20,6 +21,7 @@ export class HeaderComponent {
     this.menuButton = page.locator(headerSelectors.headerMenuButton);
     this.shoppingCartContainer = page.locator(headerSelectors.headerShoppingContainer);
     this.shoppingCartLink = page.locator(headerSelectors.shoppingCartLink);
+    this.shoppingCartBadge = page.locator(headerSelectors.shoppingCartBadge);
     this.cartList = page.locator(headerSelectors.cartList);
     this.cartItems = page.locator(headerSelectors.cartItem);
     this.getStartedLink = page.getByRole(headerSelectors.getStartedLink.role, {
@@ -38,6 +40,15 @@ export class HeaderComponent {
 
   async openGetStarted() {
     await this.getStartedLink.click();
+  }
+
+  async expectShoppingCartBadgeCount(expectedCount: string) {
+    if (expectedCount === '0') {
+      await expect(this.shoppingCartBadge).toHaveCount(0);
+      return;
+    }
+
+    await expect(this.shoppingCartBadge).toHaveText(expectedCount);
   }
 
   async openBasketAndExpectProductsPresent() {
