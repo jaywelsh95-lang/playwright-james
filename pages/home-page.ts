@@ -16,7 +16,7 @@ export class HomePage extends BasePage {
   }
 
   async expectLoaded() {
-    await expect(this.page).toHaveTitle(/Playwright/);
+    await expect(this.page).toHaveTitle(/Swag Labs/);
   }
 
 }

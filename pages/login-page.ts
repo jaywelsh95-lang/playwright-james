@@ -9,7 +9,7 @@ export class LoginPage extends BasePage {
   }
 
   async goto() {
-    await super.goto(urls.home2);
+    await super.goto(urls.home);
   }
 
   async login(username: string, password: string) {
