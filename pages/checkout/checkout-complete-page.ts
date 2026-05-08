@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { HeaderComponent } from '../../components/header.component';
-import { checkoutCompleteSelectors } from '../../selectors/checkout/checkoutComplete.selectors';
+import { checkoutCompleteSelectors } from '../../selectors/checkout/checkout-complete.selectors';
 import { BasePage } from '../base-page';
 
 export class CheckoutCompletePage extends BasePage {

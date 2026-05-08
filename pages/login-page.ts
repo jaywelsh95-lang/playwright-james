@@ -1,5 +1,5 @@
 import { expect, type Page } from '@playwright/test';
-import { loginPageSelectors } from '../selectors/loginPage.selectors';
+import { loginPageSelectors } from '../selectors/login.selectors';
 import { urls } from '../test-data/urls';
 import { BasePage } from './base-page';
 

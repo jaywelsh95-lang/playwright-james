@@ -1,6 +1,5 @@
 import { expect, test } from '../../../fixtures/pages.fixture';
 import { credentials } from '../../../test-data/credentials';
-import { urls } from '../../../test-data/urls';
 
 test.describe('Product Details Page (PDP)', () => {
   test.beforeEach(async ({ loginPage, plpPage, pdpPage }) => {
@@ -15,12 +14,6 @@ test.describe('Product Details Page (PDP)', () => {
 
     await test.step('Navigate to PDP via PLP', async () => {
       await pdpPage.openFromPLP(plpPage, 'Sauce Labs Backpack');
-    });
-  });
-
-  test('Header is present on PDP', async ({ pdpPage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await pdpPage.expectHeaderVisible();
     });
   });
 

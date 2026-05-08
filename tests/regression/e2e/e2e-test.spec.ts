@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/pages.fixture';
 import { credentials } from '../../../test-data/credentials';
-import { userData } from '../../../test-data/userData';
+import { userData } from '../../../test-data/user-data';
 
 test.describe('E2E Test', () => {
   test('Complete user journey from login to order completion and return to PLP', async ({
@@ -8,10 +8,11 @@ test.describe('E2E Test', () => {
     plpPage,
     pdpPage,
     headerComponent,
+    footerComponent,
     basketPage,
     checkoutStepOnePage,
     checkoutStepTwoPage,
-    checkoutCompletePage
+    checkoutCompletePage,
   }) => {
     await test.step('Navigate to login page and verify elements', async () => {
       await loginPage.goto();
@@ -32,8 +33,9 @@ test.describe('E2E Test', () => {
       await pdpPage.expectLoaded();
     });
 
-    await test.step('Verify PDP header and product content', async () => {
+    await test.step('Verify PDP header, footer and product content', async () => {
       await pdpPage.expectHeaderVisible();
+      await footerComponent.expectSwagLabsFooterVisible();
       await pdpPage.expectProductContentVisible();
     });
 
@@ -82,9 +84,10 @@ test.describe('E2E Test', () => {
       await basketPage.clickCheckoutAndExpectNextStep();
     });
 
-    await test.step('Verify checkout step one page and header', async () => {
+    await test.step('Verify checkout step one page, header and footer', async () => {
       await checkoutStepOnePage.expectLoaded();
       await checkoutStepOnePage.expectHeaderVisible();
+      await footerComponent.expectSwagLabsFooterVisible();
       await checkoutStepOnePage.expectFormFieldsVisible();
       await checkoutStepOnePage.expectButtonsVisible();
     });
@@ -104,6 +107,7 @@ test.describe('E2E Test', () => {
     await test.step('Verify checkout step two page elements', async () => {
       await checkoutStepTwoPage.expectLoaded();
       await checkoutStepTwoPage.expectHeaderVisible();
+      await footerComponent.expectSwagLabsFooterVisible();
       await checkoutStepTwoPage.expectProductDetailsVisible();
       await checkoutStepTwoPage.expectPaymentInfoVisible();
       await checkoutStepTwoPage.expectShippingInfoVisible();
@@ -117,6 +121,7 @@ test.describe('E2E Test', () => {
     await test.step('Verify order success page', async () => {
       await checkoutCompletePage.expectLoaded();
       await checkoutCompletePage.expectHeaderVisible();
+      await footerComponent.expectSwagLabsFooterVisible();
       await checkoutCompletePage.expectSuccessMessageVisible();
       await checkoutCompletePage.expectBackHomeButtonVisible();
     });

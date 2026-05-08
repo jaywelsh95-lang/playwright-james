@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/pages.fixture';
 import { credentials } from '../../../test-data/credentials';
-import { userData } from '../../../test-data/userData';
+import { userData } from '../../../test-data/user-data';
 
 test.describe('Smoke Test', () => {
   test('Complete order placement flow', async ({ loginPage, plpPage, headerComponent, basketPage, checkoutStepOnePage, checkoutStepTwoPage, checkoutCompletePage }) => {

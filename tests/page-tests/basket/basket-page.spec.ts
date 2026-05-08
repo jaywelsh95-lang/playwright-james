@@ -29,12 +29,6 @@ test.describe('Basket Page', () => {
     });
   });
 
-  test('Header elements are present on the basket page', async ({ basketPage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await basketPage.expectHeaderVisible();
-    });
-  });
-
   test('Basket page elements are present', async ({ basketPage }) => {
     await test.step('Verify basket elements are visible', async () => {
       await basketPage.expectBasketElementsPresent();

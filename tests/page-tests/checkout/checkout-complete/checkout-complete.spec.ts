@@ -1,6 +1,6 @@
 import { expect, test } from '../../../../fixtures/pages.fixture';
 import { credentials } from '../../../../test-data/credentials';
-import { userData } from '../../../../test-data/userData';
+import { userData } from '../../../../test-data/user-data';
 
 test.describe('Checkout Complete', () => {
   test.beforeEach(async ({ loginPage, plpPage, headerComponent, basketPage, checkoutStepOnePage, checkoutStepTwoPage, checkoutCompletePage }) => {
@@ -41,12 +41,6 @@ test.describe('Checkout Complete', () => {
 
     await test.step('Verify checkout complete page is loaded', async () => {
       await checkoutCompletePage.expectLoaded();
-    });
-  });
-
-  test('Header is present on checkout complete page', async ({ checkoutCompletePage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await checkoutCompletePage.expectHeaderVisible();
     });
   });
 

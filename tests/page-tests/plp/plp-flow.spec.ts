@@ -16,12 +16,6 @@ test.describe('PLP - Product Listing Page', () => {
     });
   });
 
-  test('Header elements are present on the PLP', async ({ headerComponent }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await headerComponent.expectSwagLabsHeaderVisible();
-    });
-  });
-
   test('User can add products to basket and see the mini cart counter increase', async ({
     plpPage,
   }) => {

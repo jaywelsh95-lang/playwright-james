@@ -1,6 +1,6 @@
 import { expect, test } from '../../../../fixtures/pages.fixture';
 import { credentials } from '../../../../test-data/credentials';
-import { userData } from '../../../../test-data/userData';
+import { userData } from '../../../../test-data/user-data';
 
 test.describe('Checkout Step Two', () => {
   test.beforeEach(async ({ loginPage, plpPage, headerComponent, basketPage, checkoutStepOnePage, checkoutStepTwoPage }) => {
@@ -37,12 +37,6 @@ test.describe('Checkout Step Two', () => {
 
     await test.step('Verify checkout step two page is loaded', async () => {
       await checkoutStepTwoPage.expectLoaded();
-    });
-  });
-
-  test('Header is present on checkout step two page', async ({ checkoutStepTwoPage }) => {
-    await test.step('Verify header elements are visible', async () => {
-      await checkoutStepTwoPage.expectHeaderVisible();
     });
   });
 
